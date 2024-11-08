@@ -8,6 +8,39 @@
 import Foundation
 import SwiftyJSON
 
+class ReadBooksManager: ObservableObject {
+    @Published var readBooks: [Book] = []
+
+    init() {
+        loadBooks()
+    }
+
+    func addBook(_ book: Book) {
+        if !readBooks.contains(where: { $0.id == book.id }) {
+            readBooks.append(book)
+            saveBooks()
+        }
+    }
+
+    func removeBook(_ book: Book) {
+        readBooks.removeAll { $0.id == book.id }
+        saveBooks()
+    }
+
+    private func saveBooks() {
+        if let encoded = try? JSONEncoder().encode(readBooks) {
+            UserDefaults.standard.set(encoded, forKey: "readBooks")
+        }
+    }
+
+    private func loadBooks() {
+        if let savedData = UserDefaults.standard.data(forKey: "readBooks"),
+           let decodedBooks = try? JSONDecoder().decode([Book].self, from: savedData) {
+            readBooks = decodedBooks
+        }
+    }
+}
+
 class BookDataFetcher: ObservableObject {
     @Published var data = [Book]()
 
@@ -20,6 +53,7 @@ class BookDataFetcher: ObservableObject {
             return
         }
         
+        print("searching:")
         let session = URLSession(configuration: .default)
         
         session.dataTask(with: url) { data, response, error in
@@ -35,18 +69,25 @@ class BookDataFetcher: ObservableObject {
             
             let json = try! JSON(data: data)
             
+            
+            
             let items = json["items"].arrayValue
             
             DispatchQueue.main.async {
-                self.data = items.map { item in
+                var newBooks: [Book] = []
+
+                for item in items {
                     let title = item["volumeInfo"]["title"].stringValue
+                    print(title)
                     let authors = item["volumeInfo"]["authors"].arrayValue.map { $0.stringValue }.joined(separator: ", ")
                     let description = item["volumeInfo"]["description"].stringValue
                     let imageURL = item["volumeInfo"]["imageLinks"]["thumbnail"].stringValue
                     let bookURL = item["volumeInfo"]["previewLink"].stringValue
-                    
-                    return Book(id: title, title: title, authors: authors, desc: description, imurl: imageURL, url: bookURL)
+                        
+                    newBooks.append(Book(id: title, title: title, authors: authors, desc: description, imurl: imageURL, url: bookURL))
                 }
+                    
+                self.data = newBooks
             }
         }.resume()
     }

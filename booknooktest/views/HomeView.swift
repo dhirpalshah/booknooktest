@@ -10,11 +10,15 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct HomeView: View {
-    @ObservedObject var books = BookDataFetcher()
+    @ObservedObject var books: BookDataFetcher // Use @ObservedObject for BookDataFetcher
+    @EnvironmentObject var readBooksManager: ReadBooksManager // Use EnvironmentObject for ReadBooksManager
     @State private var searchQuery = ""
 
     var body: some View {
         VStack {
+            Text("Search Books")
+                .font(.largeTitle)
+                .padding()
             TextField("Search for a book...", text: $searchQuery, onCommit: {
                 books.fetchData(query: searchQuery)
             })
@@ -41,6 +45,13 @@ struct HomeView: View {
                         Text(book.authors)
                             .font(.subheadline)
                             .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                    Button(action: {
+                        readBooksManager.addBook(book) // Add book without affecting search results
+                    }) {
+                        Image(systemName: "bookmark.fill")
+                            .foregroundColor(.blue)
                     }
                 }
             }

@@ -10,9 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
+        TabView {
             HomeView()
-                .navigationTitle("Books")
+                .tabItem() {
+                    Image(systemName: "magnifyingglass.circle.fill")
+                    Text("Search")
+                }
         }
     }
 }

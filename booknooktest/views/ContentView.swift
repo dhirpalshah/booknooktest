@@ -5,20 +5,19 @@
 //  Created by Dhirpal Shah on 11/7/24.
 //
 
+import Foundation
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            HomeView()
+                .navigationTitle("Books")
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+

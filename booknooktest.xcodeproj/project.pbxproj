@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F255CEDD2CDDC48500532AAE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F255CEDC2CDDC48500532AAE /* HomeView.swift */; };
+		F255CEE02CDDC4B300532AAE /* BookDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F255CEDF2CDDC4B300532AAE /* BookDataFetcher.swift */; };
+		F255CEE32CDDC4E600532AAE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F255CEE22CDDC4E600532AAE /* Book.swift */; };
+		F255CEE52CDDC55500532AAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F255CEE42CDDC55500532AAE /* ContentView.swift */; };
 		F2A46B272CDD593600F6AE6D /* booknooktestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A46B262CDD593600F6AE6D /* booknooktestApp.swift */; };
-		F2A46B292CDD593600F6AE6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A46B282CDD593600F6AE6D /* ContentView.swift */; };
 		F2A46B2B2CDD593800F6AE6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A46B2A2CDD593800F6AE6D /* Assets.xcassets */; };
 		F2A46B2E2CDD593800F6AE6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A46B2D2CDD593800F6AE6D /* Preview Assets.xcassets */; };
 		F2A46B382CDD593900F6AE6D /* booknooktestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A46B372CDD593900F6AE6D /* booknooktestTests.swift */; };
 		F2A46B422CDD593900F6AE6D /* booknooktestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A46B412CDD593900F6AE6D /* booknooktestUITests.swift */; };
 		F2A46B442CDD593900F6AE6D /* booknooktestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A46B432CDD593900F6AE6D /* booknooktestUITestsLaunchTests.swift */; };
+		F2A46B532CDD599500F6AE6D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F2A46B522CDD599500F6AE6D /* SwiftyJSON */; };
+		F2A46B562CDD59DF00F6AE6D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F2A46B552CDD59DF00F6AE6D /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F255CEDC2CDDC48500532AAE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F255CEDF2CDDC4B300532AAE /* BookDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataFetcher.swift; sourceTree = "<group>"; };
+		F255CEE22CDDC4E600532AAE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F255CEE42CDDC55500532AAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F255CEE62CDDC5C500532AAE /* booknooktest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = booknooktest.entitlements; sourceTree = "<group>"; };
 		F2A46B232CDD593600F6AE6D /* booknooktest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = booknooktest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A46B262CDD593600F6AE6D /* booknooktestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = booknooktestApp.swift; sourceTree = "<group>"; };
-		F2A46B282CDD593600F6AE6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2A46B2A2CDD593800F6AE6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2A46B2D2CDD593800F6AE6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2A46B332CDD593900F6AE6D /* booknooktestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = booknooktestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A46B562CDD59DF00F6AE6D /* SDWebImageSwiftUI in Frameworks */,
+				F2A46B532CDD599500F6AE6D /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F255CEDE2CDDC4A500532AAE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				F255CEDF2CDDC4B300532AAE /* BookDataFetcher.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		F255CEE12CDDC4D500532AAE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F255CEE22CDDC4E600532AAE /* Book.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F282FB182CDDC3E500CEADC8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F255CEDC2CDDC48500532AAE /* HomeView.swift */,
+				F255CEE42CDDC55500532AAE /* ContentView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		F2A46B1A2CDD593600F6AE6D = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +114,7 @@
 				F2A46B362CDD593900F6AE6D /* booknooktestTests */,
 				F2A46B402CDD593900F6AE6D /* booknooktestUITests */,
 				F2A46B242CDD593600F6AE6D /* Products */,
+				F2A46B512CDD599500F6AE6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +131,11 @@
 		F2A46B252CDD593600F6AE6D /* booknooktest */ = {
 			isa = PBXGroup;
 			children = (
+				F255CEE62CDDC5C500532AAE /* booknooktest.entitlements */,
+				F255CEE12CDDC4D500532AAE /* models */,
+				F255CEDE2CDDC4A500532AAE /* data */,
 				F2A46B262CDD593600F6AE6D /* booknooktestApp.swift */,
-				F2A46B282CDD593600F6AE6D /* ContentView.swift */,
+				F282FB182CDDC3E500CEADC8 /* views */,
 				F2A46B2A2CDD593800F6AE6D /* Assets.xcassets */,
 				F2A46B2C2CDD593800F6AE6D /* Preview Content */,
 			);
@@ -127,6 +167,13 @@
 			path = booknooktestUITests;
 			sourceTree = "<group>";
 		};
+		F2A46B512CDD599500F6AE6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +190,10 @@
 			dependencies = (
 			);
 			name = booknooktest;
+			packageProductDependencies = (
+				F2A46B522CDD599500F6AE6D /* SwiftyJSON */,
+				F2A46B552CDD59DF00F6AE6D /* SDWebImageSwiftUI */,
+			);
 			productName = booknooktest;
 			productReference = F2A46B232CDD593600F6AE6D /* booknooktest.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +266,10 @@
 				Base,
 			);
 			mainGroup = F2A46B1A2CDD593600F6AE6D;
+			packageReferences = (
+				F2A46B502CDD598400F6AE6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F2A46B542CDD59DB00F6AE6D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = F2A46B242CDD593600F6AE6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2A46B292CDD593600F6AE6D /* ContentView.swift in Sources */,
+				F255CEDD2CDDC48500532AAE /* HomeView.swift in Sources */,
+				F255CEE52CDDC55500532AAE /* ContentView.swift in Sources */,
+				F255CEE02CDDC4B300532AAE /* BookDataFetcher.swift in Sources */,
+				F255CEE32CDDC4E600532AAE /* Book.swift in Sources */,
 				F2A46B272CDD593600F6AE6D /* booknooktestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = booknooktest/booknooktest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"booknooktest/Preview Content\"";
@@ -448,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = booknooktest/booknooktest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"booknooktest/Preview Content\"";
@@ -588,6 +648,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2A46B502CDD598400F6AE6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		F2A46B542CDD59DB00F6AE6D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2A46B522CDD599500F6AE6D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2A46B502CDD598400F6AE6D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		F2A46B552CDD59DF00F6AE6D /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2A46B542CDD59DB00F6AE6D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2A46B1B2CDD593600F6AE6D /* Project object */;
 }

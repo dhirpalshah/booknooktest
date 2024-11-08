@@ -44,6 +44,7 @@
 		F255CEE22CDDC4E600532AAE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		F255CEE42CDDC55500532AAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F255CEE62CDDC5C500532AAE /* booknooktest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = booknooktest.entitlements; sourceTree = "<group>"; };
+		F27162EF2CDE8166004BD66A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F2A46B232CDD593600F6AE6D /* booknooktest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = booknooktest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A46B262CDD593600F6AE6D /* booknooktestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = booknooktestApp.swift; sourceTree = "<group>"; };
 		F2A46B2A2CDD593800F6AE6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		F2A46B252CDD593600F6AE6D /* booknooktest */ = {
 			isa = PBXGroup;
 			children = (
+				F27162EF2CDE8166004BD66A /* Info.plist */,
 				F255CEE62CDDC5C500532AAE /* booknooktest.entitlements */,
 				F255CEE12CDDC4D500532AAE /* models */,
 				F255CEDE2CDDC4A500532AAE /* data */,
@@ -484,6 +486,8 @@
 				DEVELOPMENT_TEAM = TZGN7PV8WC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = booknooktest/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -514,6 +518,8 @@
 				DEVELOPMENT_TEAM = TZGN7PV8WC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = booknooktest/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

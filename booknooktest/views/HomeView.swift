@@ -13,6 +13,7 @@ struct HomeView: View {
     @ObservedObject var books: BookDataFetcher // Use @ObservedObject for BookDataFetcher
     @EnvironmentObject var readBooksManager: ReadBooksManager // Use EnvironmentObject for ReadBooksManager
     @State private var searchQuery = ""
+    
 
     var body: some View {
         VStack {
@@ -48,13 +49,24 @@ struct HomeView: View {
                     }
                     Spacer()
                     Button(action: {
-                        readBooksManager.addBook(book) // Add book without affecting search results
+                        toggleReadStatus(for: book)
                     }) {
-                        Image(systemName: "bookmark.fill")
+                        Image(systemName: isBookRead(book) ? "checkmark.circle.fill" : "bookmark.fill")
                             .foregroundColor(.blue)
                     }
                 }
             }
+        }
+    }
+    private func isBookRead(_ book: Book) -> Bool {
+        return readBooksManager.readBooks.contains(where: { $0.id == book.id })
+    }
+    
+    private func toggleReadStatus(for book: Book) {
+        if isBookRead(book) {
+            readBooksManager.removeBook(book)
+        } else {
+            readBooksManager.addBook(book)
         }
     }
 }

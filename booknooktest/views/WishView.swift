@@ -1,24 +1,25 @@
 //
-//  ReadView.swift
+//  WishView.swift
 //  booknooktest
 //
 //  Created by Dhirpal Shah on 11/8/24.
 //
 
+import Foundation
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct ReadView: View {
+struct WishView: View {
     @EnvironmentObject var readBooksManager: ReadBooksManager
     @EnvironmentObject var wishBooksManager: WishBooksManager
 
     var body: some View {
         VStack {
-            Text("Books You've Read")
+            Text("Books You Want to Read")
                 .font(.largeTitle)
                 .padding()
             
-            List(readBooksManager.readBooks) { book in
+            List(wishBooksManager.wishBooks) { book in
                 HStack {
                     if let imageURL = URL(string: book.imurl) {
                         WebImage(url: imageURL)
@@ -42,10 +43,21 @@ struct ReadView: View {
                     Spacer()
                     HStack(spacing: 16) {
                         Button(action: {
-                            readBooksManager.removeBook(book)
+                            readBooksManager.addBook(book)
+                            wishBooksManager.removeBook(book)
+                        }) {
+                            Image(systemName: "star")
+                                .foregroundColor(.orange)
+                                .padding()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        Button(action: {
+                            wishBooksManager.removeBook(book)
                         }) {
                             Image(systemName: "trash")
                                 .foregroundColor(.red)
+                                .padding()
                         }
                         .buttonStyle(PlainButtonStyle())
                     }

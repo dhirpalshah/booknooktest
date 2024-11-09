@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var readBooksManager = ReadBooksManager()
+    @StateObject private var wishBooksManager = WishBooksManager()
     @StateObject private var books = BookDataFetcher()
 
     var body: some View {
@@ -24,8 +25,14 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search")
                 }
+            WishView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Wish List")
+                }
         }
         .environmentObject(readBooksManager)
+        .environmentObject(wishBooksManager)
     }
 }
 

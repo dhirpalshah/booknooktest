@@ -12,6 +12,7 @@ import SDWebImageSwiftUI
 struct HomeView: View {
     @ObservedObject var books: BookDataFetcher // Use @ObservedObject for BookDataFetcher
     @EnvironmentObject var readBooksManager: ReadBooksManager // Use EnvironmentObject for ReadBooksManager
+    @EnvironmentObject var wishBooksManager: WishBooksManager
     @State private var searchQuery = ""
     
 
@@ -48,12 +49,28 @@ struct HomeView: View {
                             .foregroundColor(.secondary)
                     }
                     Spacer()
-                    Button(action: {
-                        toggleReadStatus(for: book)
-                    }) {
-                        Image(systemName: isBookRead(book) ? "checkmark.circle.fill" : "bookmark.fill")
-                            .foregroundColor(.blue)
+                    // Wrap buttons in individual HStacks with padding and spacing
+                    HStack(spacing: 16) {
+                        Button(action: {
+                            toggleReadStatus(for: book)
+                        }) {
+                            Image(systemName: isBookRead(book) ? "checkmark.circle.fill" : "bookmark.fill")
+                                .foregroundColor(.blue)
+                                .padding()
+                        }
+                        .buttonStyle(PlainButtonStyle()) // Prevents button styling from interfering
+                        
+                        Button(action: {
+                            toggleWishStatus(for: book)
+                        }) {
+                            Image(systemName: isBookWished(book) ? "star.circle.fill" : "star")
+                                .foregroundColor(.orange)
+                                .padding()
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
+                    .padding(.vertical, 8)
+                    
                 }
             }
         }
@@ -62,11 +79,24 @@ struct HomeView: View {
         return readBooksManager.readBooks.contains(where: { $0.id == book.id })
     }
     
+    private func isBookWished(_ book: Book) -> Bool {
+        return wishBooksManager.wishBooks.contains(where: { $0.id == book.id })
+    }
+    
     private func toggleReadStatus(for book: Book) {
         if isBookRead(book) {
             readBooksManager.removeBook(book)
         } else {
             readBooksManager.addBook(book)
+        }
+    }
+    
+    private func toggleWishStatus(for book: Book) {
+        if isBookWished(book) {
+            wishBooksManager.removeBook(book)
+        } else {
+            readBooksManager.removeBook(book) // Ensure exclusivity
+            wishBooksManager.addBook(book, readBooksManager: readBooksManager)
         }
     }
 }

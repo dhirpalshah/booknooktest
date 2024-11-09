@@ -13,7 +13,6 @@ import Combine
 class ReadBooksManager: ObservableObject {
     @Published var readBooks: [Book] = []
     @Published var flashMessage: String = ""
-    @Published var showFlashMessage: Bool = false
     
 
     init() {
@@ -25,7 +24,6 @@ class ReadBooksManager: ObservableObject {
             readBooks.append(book)
             saveBooks()
             print("added book")
-            showFlashMessage("Added '\(book.title)' to Read")
         }
     }
 
@@ -33,7 +31,6 @@ class ReadBooksManager: ObservableObject {
         readBooks.removeAll { $0.id == book.id }
         saveBooks()
         print("removed book")
-        showFlashMessage("Removed '\(book.title)' from Read")
     }
 
     private func saveBooks() {
@@ -46,19 +43,6 @@ class ReadBooksManager: ObservableObject {
         if let savedData = UserDefaults.standard.data(forKey: "readBooks"),
            let decodedBooks = try? JSONDecoder().decode([Book].self, from: savedData) {
             readBooks = decodedBooks
-        }
-    }
-    
-    private func showFlashMessage(_ message: String) {
-        flashMessage = message
-        withAnimation {
-            showFlashMessage = true
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation {
-                self.showFlashMessage = false
-            }
         }
     }
 }

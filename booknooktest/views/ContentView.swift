@@ -30,6 +30,11 @@ struct ContentView: View {
                     Image(systemName: "star.fill")
                     Text("Wish List")
                 }
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
         }
         .environmentObject(readBooksManager)
         .environmentObject(wishBooksManager)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2026DFF2CDF278700DBC5B0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2026DFE2CDF278700DBC5B0 /* ProfileView.swift */; };
 		F255CEDD2CDDC48500532AAE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F255CEDC2CDDC48500532AAE /* HomeView.swift */; };
 		F255CEE02CDDC4B300532AAE /* BookDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F255CEDF2CDDC4B300532AAE /* BookDataFetcher.swift */; };
 		F255CEE32CDDC4E600532AAE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F255CEE22CDDC4E600532AAE /* Book.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F2026DFE2CDF278700DBC5B0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F255CEDC2CDDC48500532AAE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F255CEDF2CDDC4B300532AAE /* BookDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDataFetcher.swift; sourceTree = "<group>"; };
 		F255CEE22CDDC4E600532AAE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				F255CEE42CDDC55500532AAE /* ContentView.swift */,
 				F27162F02CDE88B0004BD66A /* ReadView.swift */,
 				F27162F62CDF1AB1004BD66A /* WishView.swift */,
+				F2026DFE2CDF278700DBC5B0 /* ProfileView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F255CEDD2CDDC48500532AAE /* HomeView.swift in Sources */,
+				F2026DFF2CDF278700DBC5B0 /* ProfileView.swift in Sources */,
 				F255CEE52CDDC55500532AAE /* ContentView.swift in Sources */,
 				F255CEE02CDDC4B300532AAE /* BookDataFetcher.swift in Sources */,
 				F255CEE32CDDC4E600532AAE /* Book.swift in Sources */,

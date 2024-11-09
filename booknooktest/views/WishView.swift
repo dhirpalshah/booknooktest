@@ -46,7 +46,7 @@ struct WishView: View {
                             readBooksManager.addBook(book)
                             wishBooksManager.removeBook(book)
                         }) {
-                            Image(systemName: "star")
+                            Image(systemName: "plus.circle")
                                 .foregroundColor(.orange)
                                 .padding()
                         }
